@@ -141,30 +141,31 @@ class Product_a_laptop(models.Model):
         return self.title
 # ======================================================================================
 # ----------------------------------------
-class OrderItem(models.Model):
-    product_tv = models.OneToOneField(Product_TV, on_delete=models.SET_NULL, null=True, blank=True)
-    product_phone = models.OneToOneField(Product_Phone, on_delete=models.SET_NULL, null=True, blank=True)
-    product_a_laptop = models.OneToOneField(Product_a_laptop, on_delete=models.SET_NULL, null=True, blank=True)
-    is_ordered = models.BooleanField(default=False)
-    date_added = models.DateTimeField(auto_now=True)
-    date_ordered = models.DateTimeField(null=True)
+# class OrderItem(models.Model):
+#     product_tv = models.OneToOneField(Product_TV, on_delete=models.SET_NULL, null=True, blank=True)
+#     product_phone = models.OneToOneField(Product_Phone, on_delete=models.SET_NULL, null=True, blank=True)
+#     product_a_laptop = models.OneToOneField(Product_a_laptop, on_delete=models.SET_NULL, null=True, blank=True)
+#     slug = models.SlugField(blank=True)
+#     is_ordered = models.BooleanField(default=False)
+#     date_added = models.DateTimeField(auto_now=True)
+#     date_ordered = models.DateTimeField(null=True)
 
-    def __str__(self):
-        return '{}'.format(self.product_tv, self.product_phone, self.product_a_laptop)
+#     def __str__(self):
+#         return '{}'.format(self.product_tv, self.product_phone, self.product_a_laptop)
 
 
-class Order(models.Model):
-    ref_code = models.CharField(max_length=15)
-    # owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True)
-    is_ordered = models.BooleanField(default=False)
-    items = models.ManyToManyField(OrderItem)
-    date_ordered = models.DateTimeField(auto_now=True)
+# class Order(models.Model):
+#     ref_code = models.CharField(max_length=15)
+#     # owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True)
+#     is_ordered = models.BooleanField(default=False)
+#     items = models.ManyToManyField(OrderItem)
+#     date_ordered = models.DateTimeField(auto_now=True)
 
-    def get_cart_items(self):
-        return self.items.all()
+#     def get_cart_items(self):
+#         return self.items.all()
 
-    def __str__(self):
-        return self.ref_code
+#     def __str__(self):
+#         return self.ref_code
         # return '{0} - {1}'.format(self.owner, self.ref_code)
 # =====================================================================================
 

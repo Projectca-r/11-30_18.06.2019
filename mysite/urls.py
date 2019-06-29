@@ -22,7 +22,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
-    path('user/', include('user.urls')),
+    path('user/', include('user.urls'), name='user_url'),
+    path('main/', include('main.urls'), name='main_url'),
 ]
 
 if settings.DEBUG:

@@ -123,10 +123,3 @@ class Product_a_laptopDetail(ObjectDetailMixin, View):
     template = 'blog/a_laptop/product_a_laptop_detail.html'
 
 # =================================== Cart ===========================================
-
-def orderitem_list(request):
-    orderitem = OrderItem.objects.all()
-    context = {
-        'orderitem': orderitem,
-    }
-    return render(request, 'blog/orderitem_list.html', context=context)

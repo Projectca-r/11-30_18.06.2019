@@ -17,16 +17,15 @@ urlpatterns = [
     path('category_a_laptop/<str:slug>/', Category_a_laptopDetail.as_view(), name='category_a_laptop_detail_url'),
 # ================================= Product =========================================
     path('product_tv/', product_tvs_list, name='product_tv_list_url'),
-    path('product_tv/<str:slug>/', Product_TVDetail, name='product_tv_detail_url'),
+    path('product_tv/<str:slug>/', Product_TVDetail.as_view(), name='product_tv_detail_url'),
 # -----------------------------------------------------------------------------------
     path('product_phone/', product_phones_list, name='product_phone_list_url'),
-    path('product_phone/<str:slug>/', Product_PhoneDetail, name='product_phone_detail_url'),
+    path('product_phone/<str:slug>/', Product_PhoneDetail.as_view(), name='product_phone_detail_url'),
 # -----------------------------------------------------------------------------------
     path('product_a_laptop/', product_a_laptops_list, name='product_a_laptop_list_url'),
-    path('product_a_laptop/<str:slug>/', Product_a_laptopDetail, name='product_a_laptop_detail_url'),
+    path('product_a_laptop/<str:slug>/', Product_a_laptopDetail.as_view(), name='product_a_laptop_detail_url'),
 # =================================== Cart =============================================
-    path('orderitem/', orderitem_list, name='orderitem_list_url'),
-
+    # path('orderitem/', orderitems_list, name='orderitem_list_url'),
 # ================================= TV =========================================
     # path('lg/', lgs_list, name='lg_list_url'),
     # path('lg/<str:slug>/', lg_detail, name='lg_detail_url'),
